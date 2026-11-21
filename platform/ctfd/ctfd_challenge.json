@@ -1,0 +1,40 @@
+{
+  "name": "PROJECT ULTRON: Disengagement",
+  "category": "Web / Digital Forensics / Systems",
+  "description": "PROJECT ULTRON: DISENGAGEMENT\n\nDIFFICULTY: HARD\nCATEGORY: WEB / DIGITAL FORENSICS / SYSTEMS\n\nThe recovery team has isolated a surviving ULTRON control node. The system is not accepting ordinary shutdown requests, and the remaining operator records are incomplete.\n\nOne operator account retains access to the recovery environment. The account's identity and authentication material are scattered across archived incident records, an authentication migration backup and maintenance documentation.\n\nYour objective is to identify the operator account, recover the required authentication factors, sign in to the ULTRON environment, obtain administrator-level access within the challenge system, and locate the disengagement record.\n\nYou will be provided with an evidence bundle and access to a dedicated challenge workspace. Read the supplied material carefully and keep track of how the records relate to one another.\n\nIMPORTANT\n\n- The challenge uses a fictional, isolated environment. Do not test any system outside the supplied challenge scope.\n- HTTP requests or public API interaction alone will not complete the challenge. The final record is stored in the local challenge filesystem and is accessible only after the intended administrator permission boundary has been crossed.\n- The operator account is a standard user. A successful login does not itself grant administrator access.\n- Do not use brute force against the login or second-factor service. The intended route is evidence-based recovery.\n- The final proof must be submitted through the competition platform in the exact flag format discovered in the environment.\n\nGood luck. The recovery team has no further records to provide.\n",
+  "value": 500,
+  "type": "standard",
+  "state": "visible",
+  "max_attempts": 0,
+  "flags": [
+    {
+      "type": "static",
+      "content": "secuRIT{ CONGRATULATIONS PARTICIPANT. YOU FOUND THE FLAG. ULTRON HAS BEEN SUCCESSFULLY DISENGAGED}",
+      "data": "case_sensitive"
+    }
+  ],
+  "tags": [
+    "Forensics",
+    "Web",
+    "Privilege-Escalation",
+    "HERCULES-Level-4",
+    "AI-Resilient"
+  ],
+  "hints": [
+    {
+      "title": "HINT 1 \u2014 Identity",
+      "content": "The operator's identity is not established by any single document. Compare the records using their timestamps, identifiers and naming conventions. Look for the identity that appears consistently across the incident and authentication records.",
+      "cost": 50
+    },
+    {
+      "title": "HINT 2 \u2014 Authentication",
+      "content": "There are three separate parts to the login process. The password recovery material and the authenticator migration record serve different purposes. Focus on the recovery note and verify that you have selected the correct account's second-factor backup.",
+      "cost": 100
+    },
+    {
+      "title": "HINT 3 \u2014 Administrator access",
+      "content": "Having a valid operator session does not mean the system trusts every operation you request. Examine the maintenance process, especially the relationship between the component's execution privileges and the configuration it consumes.",
+      "cost": 150
+    }
+  ]
+}

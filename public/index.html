@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT ULTRON // DISENGAGEMENT PROTOCOL</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="hud-container">
+    <!-- Top System Header -->
+    <header class="hud-header">
+      <div class="brand">
+        <span class="stark-logo">STARK SYSTEMS</span>
+        <span class="system-id">// ULTRON RECOVERY PROTOCOL [REV-4]</span>
+      </div>
+      <div class="system-status">
+        <div class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span id="containment-label">CONTAINMENT: ENGAGED</span>
+        </div>
+        <div class="node-badge">NODE: RC-441-ISOLATED</div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="hud-main">
+      <!-- AUTHENTICATION GATEWAY SECTION (Stage 1-3) -->
+      <section id="auth-panel" class="panel auth-panel">
+        <div class="panel-header">
+          <h2>OPERATOR AUTHENTICATION GATEWAY</h2>
+          <span class="subtext">Multi-Factor Credential Verification</span>
+        </div>
+        <div class="panel-body">
+          <p class="panel-intro">
+            Recovery console access requires primary operator credentials and verified RFC 6238 time-based authentication.
+          </p>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="username">OPERATOR USERNAME</label>
+              <input type="text" id="username" placeholder="e.g. operator_id" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="password">RECOVERED PASSWORD</label>
+              <input type="password" id="password" placeholder="Archive password payload" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="totp">SECOND FACTOR (6-DIGIT TOTP)</label>
+              <input type="text" id="totp" placeholder="000000" maxlength="6" autocomplete="off" required>
+            </div>
+            <div id="auth-error" class="error-box hidden"></div>
+            <button type="submit" id="btn-login" class="btn btn-primary">
+              <span class="btn-text">AUTHENTICATE OPERATOR</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- OPERATOR CONSOLE & TERMINAL (Stage 4-7) -->
+      <section id="console-panel" class="panel console-panel hidden">
+        <div class="telemetry-bar">
+          <div class="telemetry-item">
+            <span class="t-label">IDENTITY:</span>
+            <span id="op-identity" class="t-val">Elias Ward (eward)</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="t-label">BASE ROLE:</span>
+            <span class="t-val">OPERATOR</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="t-label">EFFECTIVE AUTHORITY:</span>
+            <span id="effective-role" class="t-val role-operator">OPERATOR</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="t-label">ADMINISTRATION:</span>
+            <span id="admin-perimeter" class="t-val status-restricted">RESTRICTED</span>
+          </div>
+          <button id="btn-logout" class="btn btn-secondary btn-sm">LOGOUT</button>
+        </div>
+
+        <div class="console-grid">
+          <!-- Left: Virtual Terminal Simulator -->
+          <div class="terminal-container">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="terminal-title">ultronctl // maintenance-workspace</span>
+            </div>
+            <div id="terminal-screen" class="terminal-screen">
+              <div class="terminal-output" id="term-output">
+                <div class="term-banner">
+  ███████╗████████╗ █████╗ ██████╗ ██╗  ██╗    ██╗   ██╗██╗  ████████╗██████╗  ██████╗ ███╗   ██╗
+  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██║ ██╔╝    ██║   ██║██║  ╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║
+  ███████╗   ██║   ███████║██████╔╝█████╔╝     ██║   ██║██║     ██║   ██████╔╝██║   ██║██╔██╗ ██║
+  ╚════██║   ██║   ██╔══██║██╔══██╗██╔═██╗     ██║   ██║██║     ██║   ██╔══██╗██║   ██║██║╚██╗██║
+  ███████║   ██║   ██║  ██║██║  ██║██║  ██╗    ╚██████╔╝███████╗██║   ██║  ██║╚██████╔╝██║ ╚████║
+  ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+                </div>
+                <div class="term-line info">ULTRON Maintenance Environment initialized.</div>
+                <div class="term-line info">Type <span class="cmd-highlight">help</span> to view available system administration utilities.</div>
+              </div>
+              <div class="terminal-input-row">
+                <span class="terminal-prompt" id="term-prompt">eward@ultron-recovery:~$</span>
+                <input type="text" id="term-input" class="terminal-input" autocomplete="off" spellcheck="false">
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Feedback & Progress Monitor -->
+          <div class="sidebar-monitor">
+            <div class="monitor-box">
+              <div class="box-title">RECOVERY FEEDBACK MONITOR (~/ULTRON_FEEDBACK.txt)</div>
+              <pre id="feedback-display" class="feedback-pre">Loading milestone telemetry...</pre>
+            </div>
+
+            <div class="monitor-box flag-box">
+              <div class="box-title">DISENGAGEMENT VERIFICATION</div>
+              <p class="flag-desc">Submit the final disengagement flag once recovered from the protected local store.</p>
+              <form id="flag-form">
+                <input type="text" id="flag-input" placeholder="secuRIT{ ... }" required autocomplete="off">
+                <button type="submit" class="btn btn-accent btn-block">SUBMIT FLAG</button>
+              </form>
+              <div id="flag-result" class="flag-result hidden"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hud-footer">
+      <span>STARK SYSTEMS INC. // RESTRICTED SECURITY HARNESS // HERCULES COMPLIANT</span>
+      <span id="clock-display">00:00:00 UTC</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
