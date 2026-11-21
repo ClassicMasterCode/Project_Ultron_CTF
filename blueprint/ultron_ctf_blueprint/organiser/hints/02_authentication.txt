@@ -1,0 +1,3 @@
+HINT 2 — AUTHENTICATION (COST: 100 POINTS)
+
+There are three separate parts to the login process. The password recovery material and the authenticator migration record serve different purposes. Focus on the recovery note and verify that you have selected the correct account's second-factor backup.

@@ -1,0 +1,3 @@
+HINT 1 — IDENTITY (COST: 50 POINTS)
+
+The operator's identity is not established by any single document. Compare the records using their timestamps, identifiers and naming conventions. Look for the identity that appears consistently across the incident and authentication records.

@@ -1,0 +1,22 @@
+PROJECT ULTRON: DISENGAGEMENT
+
+DIFFICULTY: HARD
+CATEGORY: WEB / DIGITAL FORENSICS / SYSTEMS
+
+The recovery team has isolated a surviving ULTRON control node. The system is not accepting ordinary shutdown requests, and the remaining operator records are incomplete.
+
+One operator account retains access to the recovery environment. The account's identity and authentication material are scattered across archived incident records, an authentication migration backup and maintenance documentation.
+
+Your objective is to identify the operator account, recover the required authentication factors, sign in to the ULTRON environment, obtain administrator-level access within the challenge system, and locate the disengagement record.
+
+You will be provided with an evidence bundle and access to a dedicated challenge workspace. Read the supplied material carefully and keep track of how the records relate to one another.
+
+IMPORTANT
+
+- The challenge uses a fictional, isolated environment. Do not test any system outside the supplied challenge scope.
+- HTTP requests or public API interaction alone will not complete the challenge. The final record is stored in the local challenge filesystem and is accessible only after the intended administrator permission boundary has been crossed.
+- The operator account is a standard user. A successful login does not itself grant administrator access.
+- Do not use brute force against the login or second-factor service. The intended route is evidence-based recovery.
+- The final proof must be submitted through the competition platform in the exact flag format discovered in the environment.
+
+Good luck. The recovery team has no further records to provide.

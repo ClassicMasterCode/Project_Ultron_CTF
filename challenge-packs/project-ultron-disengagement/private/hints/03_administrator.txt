@@ -1,0 +1,3 @@
+HINT 3 — ADMINISTRATOR ACCESS (COST: 150 POINTS)
+
+Having a valid operator session does not mean the system trusts every operation you request. Examine the maintenance process, especially the relationship between the component's execution privileges and the configuration it consumes.

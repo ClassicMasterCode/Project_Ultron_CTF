@@ -1,0 +1,5 @@
+ULTRON AUTHENTICATION: SECOND FACTOR NOT VERIFIED
+
+The second-factor value was not accepted.
+
+Check that the authenticator backup belongs to the identified operator and that your local clock is accurate. Do not attempt to bypass or overload the challenge's authentication service.

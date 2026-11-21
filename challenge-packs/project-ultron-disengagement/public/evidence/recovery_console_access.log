@@ -1,0 +1,4 @@
+2026-05-18T22:14:09Z console=RECOVERY-02 badge=UL-207 event=operator_login result=SUCCESS session=RC-441
+2026-05-18T22:19:31Z console=DIAG-03 badge=UL-208 event=diagnostic_login result=SUCCESS session=DG-118
+2026-05-18T22:21:02Z console=RECOVERY-02 badge=UL-208 event=operator_login result=DENIED reason=CONSOLE_NOT_ASSIGNED
+2026-05-18T22:26:47Z console=OBS-01 badge=UL-209 event=telemetry_read result=SUCCESS session=TM-090

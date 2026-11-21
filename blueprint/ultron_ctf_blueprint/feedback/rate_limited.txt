@@ -1,0 +1,5 @@
+ULTRON SECURITY: TEMPORARY RATE LIMIT
+
+Too many unsuccessful authentication attempts have been recorded.
+
+Pause and return to the evidence. The challenge is intended to reward correct recovery, not repeated guessing. Access will resume according to the configured cooldown.

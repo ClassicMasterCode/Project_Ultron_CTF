@@ -1,0 +1,5 @@
+ULTRON STATUS: SECOND FACTOR ACCEPTED
+
+The second-factor check has passed.
+
+Use the supplied ULTRON sign-in interface to complete the operator login. Successful authentication will provide standard operator permissions only.

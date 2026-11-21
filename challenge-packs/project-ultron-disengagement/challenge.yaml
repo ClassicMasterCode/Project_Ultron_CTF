@@ -1,0 +1,75 @@
+# HERCULES-style authoring manifest: illustrative project schema, not native CTFd YAML.
+id: project-ultron-disengagement
+title: "PROJECT ULTRON: Disengagement"
+category: "Web / Digital Forensics / Systems"
+difficulty: hard
+points: 500
+
+participant_brief: ../../participant/challenge-briefing.txt
+feedback_directory: ../../feedback
+
+scope:
+  environment: fictional-and-isolated
+  team_scoped_instance: true
+  single_logical_operator_account: true
+  account_role_at_login: operator
+  administrator_role_requires_local_privilege_transition: true
+  final_artifact_location: "/opt/ultron/administration/disengagement/"
+  final_artifact_delivery: local-filesystem-only
+  http_api_shortcut: prohibited
+
+stages:
+  - id: identity
+    objective: correlate incident records to identify the operator account
+    success_event: operator_identity_verified
+    feedback_file: 01_identity_found.txt
+  - id: password
+    objective: recover the operator password from the supplied recovery artefacts
+    success_event: operator_password_verified
+    feedback_file: 02_password_verified.txt
+  - id: second_factor
+    objective: identify the correct team-scoped TOTP migration backup and authenticate
+    success_event: operator_totp_verified
+    feedback_file: 03_mfa_verified.txt
+  - id: operator_login
+    objective: establish an operator session
+    success_event: operator_session_created
+    feedback_file: 04_operator_access.txt
+  - id: privilege_analysis
+    objective: identify the intended flaw in the local privileged maintenance workflow
+    success_event: privilege_boundary_checkpoint
+    feedback_file: 05_boundary_detected.txt
+  - id: administrator
+    objective: obtain administrator permission inside the challenge sandbox
+    success_event: sandbox_admin_confirmed
+    feedback_file: 06_admin_access.txt
+  - id: final_artifact
+    objective: read the protected disengagement record and submit its flag
+    success_event: final_artifact_accessed
+    feedback_file: 07_disengagement_complete.txt
+
+hints:
+  - file: ../hints/01_identity.txt
+    cost: 50
+  - file: ../hints/02_authentication.txt
+    cost: 100
+  - file: ../hints/03_administrator.txt
+    cost: 150
+
+authentication:
+  password: per-team-generated
+  second_factor: RFC6238_TOTP_per-team-secret
+  rate_limit: required
+  lockout: temporary-cooldown
+  real_identity_provider: false
+
+secrets:
+  storage: external-secret-manager-or-instance-manager
+  never_commit: [password, totp_secret, per_team_flag, seed, admin_attestation_key]
+
+validation:
+  final_flag_validation: exact-match
+  require_admin_state: true
+  require_local_artifact_access_event: true
+  reject_frontend_only_claims: true
+  verify_team_instance_ownership: true

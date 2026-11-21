@@ -1,0 +1,6 @@
+INCIDENT 26-0518 — RECOVERY CONSOLE ACCESS
+
+At the time of containment, RECOVERY-02 was reserved for the Continuity recovery operator.
+The Diagnostics contractor retained access to DIAG-03, but was not assigned to the recovery console.
+Telemetry personnel could inspect OBS-01 but could not authenticate to the recovery console.
+The successful recovery-console event is the one that matters for this investigation.

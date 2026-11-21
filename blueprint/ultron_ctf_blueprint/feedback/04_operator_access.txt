@@ -1,0 +1,5 @@
+ULTRON STATUS: OPERATOR SESSION ACTIVE
+
+Authentication is complete. ULTRON recognises you as the operator.
+
+The administration directory remains outside your current permission boundary. Inspect the local workspace, system documentation and maintenance records. The web interface is not a substitute for the local investigation required by this challenge.

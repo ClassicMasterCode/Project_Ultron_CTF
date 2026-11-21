@@ -1,0 +1,5 @@
+ULTRON STATUS: PRIVILEGE BOUNDARY INVESTIGATION
+
+Your investigation has reached the maintenance subsystem.
+
+Before attempting an administrative operation, establish which component performs it, what permissions that component has, and what inputs it trusts. Verify that the condition you identified is actually controllable from the operator context.

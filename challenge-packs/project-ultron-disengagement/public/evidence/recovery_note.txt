@@ -1,0 +1,8 @@
+RECOVERY VAULT — LEGACY EXPORT NOTE
+
+For VAULT-18 only, the archive unlock phrase follows the old indexing convention:
+
+  surname in uppercase + numeric part of the owner's badge + numeric part of the migration ticket + rotation month/year (MMYY)
+
+Use the current archive record, not the previous snapshot. The archive index is authoritative for revision state.
+No separators are inserted.

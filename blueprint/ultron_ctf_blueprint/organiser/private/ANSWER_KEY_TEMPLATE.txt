@@ -1,0 +1,34 @@
+ORGANISER ONLY — DO NOT PUBLISH OR MOUNT IN PARTICIPANT ENVIRONMENTS
+
+Challenge: PROJECT ULTRON: Disengagement
+
+FINAL FLAG (exact literal):
+secuRIT{ CONGRATULATIONS PARTICIPANT. YOU FOUND THE FLAG. ULTRON HAS BEEN SUCCESSFULLY DISENGAGED}
+
+Important: preserve the capitalisation, punctuation and the single space immediately after the opening brace. Do not include the comma that may appear as sentence punctuation in planning notes. Test the exact bytes end-to-end.
+
+ACCOUNT MODEL
+- One logical operator account exists in each team instance.
+- Generate the account identifier and credential material per instance.
+- Keep a private answer key that maps team instance ID to the generated username, password recovery result, TOTP secret reference and flag.
+- Never put the cleartext password, TOTP seed or final flag in a participant download, source map, static frontend file, public API, container build layer or log.
+
+INTENDED SOLUTION OUTLINE
+1. Correlate the personnel index, access journal and incident report to identify the one operator account.
+2. Use the supplied recovery note and archive metadata to complete the intended password recovery of the operator's challenge-owned credential.
+3. Identify the correct authenticator migration record and use its recovered team-specific TOTP secret to produce a valid code.
+4. Sign in through the supplied ULTRON interface. Confirm the account has the operator role, not administrator rights.
+5. Use the local workspace to investigate the maintenance process and determine the trust/permission flaw in the challenge-specific privileged component.
+6. Complete the intended local permission transition inside the sandbox. Do not grant host-root or shared-infrastructure privileges.
+7. Read the protected local disengagement record and submit the exact flag through CTFd.
+
+AUTHOR CONFIGURATION TODO
+- [ ] Set the final flag in the challenge secret store.
+- [ ] Generate a fresh password and TOTP secret for every team instance.
+- [ ] Prepare evidence whose clues unambiguously map to the generated account material.
+- [ ] Ensure one and only one intended operator identity is valid in each instance.
+- [ ] Ensure password and TOTP checks are separate stages.
+- [ ] Ensure the final artifact is readable only after the sandbox administrator state is reached.
+- [ ] Ensure the public web application and APIs cannot return the final artifact.
+- [ ] Verify that no secrets appear in logs, image layers, frontend bundles or downloads.
+- [ ] Keep this file restricted to organisers and challenge authors.
