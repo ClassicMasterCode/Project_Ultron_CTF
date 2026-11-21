@@ -1,0 +1,6 @@
+# HERCULES CTF Platform — PROJECT ULTRON: DISENGAGEMENT
+# Serverless API functions use standard library Python (zero cold-start latency).
+# Additional dependencies for local validation, tooling, and crypto:
+cryptography>=41.0.0
+pyyaml>=6.0.0
+requests>=2.31.0
